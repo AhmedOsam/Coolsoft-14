@@ -1,18 +1,33 @@
 Tutor::Application.routes.draw do
+<<<<<<< HEAD
 
+=======
+  post 'topics/new' => 'topics#new'
+>>>>>>> C1
   resources :discussion_boards
-
+  resources :courses
   resources :topics
-  # get "topics/new"
-  # topics GET ":controller(/:action(/:id(.:format)))"
-  # post ':controller(/:action(/:id(.:format)))'
+
   get "courses/destroy"
   get "courses/create"
   get "courses/show"
+
+  devise_for :teaching_assistants
+  devise_for :lecturers
+  devise_for :students
   
 
+<<<<<<< HEAD
   get "courses/manage"
 
+=======
+  #post "courses/1/destroy"
+ # get "courses/create"
+  # get "courses/show"
+  # get "courses/manage"
+  # get "courses/new"
+  # post "courses/new"
+>>>>>>> C1
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
@@ -20,6 +35,7 @@ Tutor::Application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'site#index'
   post "discussion_boards/toggle"
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
