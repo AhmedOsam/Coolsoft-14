@@ -1,6 +1,7 @@
 class PerformanceController < ApplicationController
 	def hide_performance
-		@user = User.find_by_id params[:id]
+		@user = Student.find_by_id (current_student.id)
 		@user.performance = false
 		@user.save
+end
 end

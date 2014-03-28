@@ -16,7 +16,7 @@ Tutor::Application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-      resources: performance
+      get 'performance/hide_performance'
   # Example resource route with options:
   #   resources :products do
   #     member do
