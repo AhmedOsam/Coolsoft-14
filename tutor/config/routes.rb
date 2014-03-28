@@ -1,9 +1,6 @@
-Tutor::Application.routes.draw do
-<<<<<<< HEAD
 
-=======
   post 'topics/new' => 'topics#new'
->>>>>>> C1
+
   resources :discussion_boards
   resources :courses
   resources :topics
@@ -17,17 +14,16 @@ Tutor::Application.routes.draw do
   devise_for :students
   
 
-<<<<<<< HEAD
   get "courses/manage"
 
-=======
+
   #post "courses/1/destroy"
  # get "courses/create"
   # get "courses/show"
   # get "courses/manage"
   # get "courses/new"
   # post "courses/new"
->>>>>>> C1
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
