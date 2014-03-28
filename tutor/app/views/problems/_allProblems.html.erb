@@ -1,0 +1,17 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+  </tr>
+ 
+  <% @problems.each do |p| %>
+    <tr>
+
+      <td><%= p.title %></td>
+      <td><%= p.description %></td>
+      <td><%= link_to "view", problems_problemView_path(:id => p.id) %></td>
+
+    </tr>
+
+  <% end %>
+</table>

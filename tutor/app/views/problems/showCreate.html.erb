@@ -1,0 +1,20 @@
+<h1 align ="center">Edit Problem Page</h1>
+
+<br>
+<%= form_for :Problem, url: {action: "Create_Edit_Problem_Page"} do |p| %>
+  <p>
+    <%= p.label :title %><br>
+    <%= p.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= p.label :description %><br>
+    <%= p.text_area :description %>
+  </p>
+ 
+  <p>
+    <%= p.submit %>
+  </p>
+<% end %>
+
+<%= render partial: "problems/allProblems"%>

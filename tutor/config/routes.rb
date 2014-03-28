@@ -1,6 +1,10 @@
 Tutor::Application.routes.draw do
-  get "problem/Create_Edit_Problem_Page"
-  get "problem_controller/Create_Edit_Problem_Page"
+  
+  post "problems/Create_Edit_Problem_Page"
+  get "problems/showCreate"
+  get "problems/problemView"
+
+  resources :problems
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
