@@ -1,4 +1,5 @@
 class CoursesController < ApplicationController
+
   
   def destroy
   	Course.find(params[:id]).destroy
@@ -9,9 +10,6 @@ class CoursesController < ApplicationController
   def create
   end
 
-  def show
-  end
-
   def manage
        id =  params[:id]
     course = Course.find_by_id(id)
@@ -19,3 +17,11 @@ class CoursesController < ApplicationController
   end
 
 end
+
+	def show
+
+			@courses = Lecturer.find_by_name('Lecturer2').courses
+		end
+	end
+
+
