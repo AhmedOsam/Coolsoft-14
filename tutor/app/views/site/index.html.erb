@@ -1,1 +1,82 @@
- Sites#Index: Hello, world!
+<%- unless student_signed_in? || lecturer_signed_in? || teaching_assistant_signed_in?%>
+	<%= flash[:notice]%>
+	<hr/>
+	<div id="register" align="center">
+		<table>
+			<tr class="row">
+				<td>
+					<p style="margin-right:5px">
+					I'm a :
+					</p>
+					</td>
+				<td>
+					<%= button_to 'Student',new_student_registration_path,style: "margin-right: 10px",class: "btn btn-success", method: :get %>
+				</td>
+				<td>
+					<%= button_to 'Lecturer', new_lecturer_registration_path,style: "margin-right: 10px",class: "btn btn-success" ,method: :get %>
+				</td>
+				<td>
+					<%= button_to 'Teaching Assistant', new_teaching_assistant_registration_path, style: "margin-right: 10	px", class: "btn btn-success", method: :get %>
+				</td>
+			</tr>
+		</table>
+	</div>
+<%end%>
+
+<% if student_signed_in? %>
+	<p>Name : <%=current_student.name%></p>
+	<p>Age : <%=current_student.age%></p>
+	<p>Gender : <% if current_student	.gender %>
+				<%= "male" %>
+				<% else %>
+				<%= "female" %>
+				<%end%>
+	</p>	<p>Email : <%=current_student.email%></p>
+	<p>Faculty : <%=current_student.faculty%></p>
+	<p>Major : <%=current_student.major%></p>
+	<p>Semester : <%=current_student.semester%></p>
+	<p>probation : <%=current_student.probation%></p>
+	<p>Advising : <%=current_student.advising%></p>
+
+
+<%= link_to "Edit my profile" , "profile/edit"%>
+
+<%end%>
+
+
+<% if lecturer_signed_in? %>
+	<p>Name : <%=current_lecturer.name%></p>
+	<p>Age : <%=current_lecturer.age%></p>
+	<p>Gender : <% if current_lecturer.gender %>
+				<%= "male" %>
+				<% else %>
+				<%= "female" %>
+				<%end%>
+	</p>
+	<p>Email : <%=current_lecturer.email%></p>
+	<p>Department : <%=current_lecturer.department%></p>
+	<p>degree : <%=current_lecturer.degree%></p>
+
+
+<%= link_to "Edit my profile" , "profile/edit"%>
+
+<%end%>
+
+
+<% if teaching_assistant_signed_in? %>
+	<p>Name : <%=current_teaching_assistant.name%></p>
+	<p>Age : <%=current_teaching_assistant.age%></p>
+	<p>Gender : <% if current_teaching_assistant.gender %>
+				<%= "male" %>
+				<% else %>
+				<%= "female" %>
+				<%end%>
+	</p>
+	<p>Email : <%=current_teaching_assistant.email%></p>
+	<p>Department : <%=current_teaching_assistant.department%></p>
+	<p>Graduated From : <%=current_teaching_assistant.graduated_from%></p>
+
+
+<%= link_to "Edit my profile" , "profile/edit"%>
+
+<%end%>

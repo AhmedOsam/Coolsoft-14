@@ -1,5 +1,14 @@
 Tutor::Application.routes.draw do
-get 'courses/show'
+  devise_for :teaching_assistants
+  devise_for :lecturers
+  devise_for :students
+
+
+  match ':controller(/:action(:/id))'  , :via => :get
+
+  match "profile/edit", :to => "profile#edit", :via => :post
+
+  match "profile/save", :to => "profile#save", :via => :post
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
