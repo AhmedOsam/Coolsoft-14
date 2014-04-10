@@ -6,6 +6,7 @@ class TopicsController < ApplicationController
   # Author: Ahmed Akram
   def new
     @course = Course.find(params[:course_id])
+    @course = Course.find(params[3])
   end
 
   # [Action]
